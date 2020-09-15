@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', "GroupController@index");
+Route::resource('groups', GroupController::class)
+    ->except([
+        'index',
+        'show',
+    ]);
+Route::resource('groups.tasks', TaskController::class)
+    ->shallow()
+    ->except([
+        'show',
+    ]);
