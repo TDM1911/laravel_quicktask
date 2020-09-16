@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', "GroupController@index");
+Route::get('/', "GroupController@index")->name('home');
 Route::resource('groups', GroupController::class)
     ->except([
         'index',
