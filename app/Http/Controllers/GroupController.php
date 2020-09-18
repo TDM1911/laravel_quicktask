@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Group;
 use Illuminate\Http\Request;
+use App\Http\Requests\GroupRequest;
 
 class GroupController extends Controller
 {
@@ -14,7 +15,9 @@ class GroupController extends Controller
      */
     public function index()
     {
-        //
+        return view('groups_index', [
+            'groups' => Group::all(),
+        ]);
     }
 
     /**
@@ -24,18 +27,20 @@ class GroupController extends Controller
      */
     public function create()
     {
-        //
+        return view('group_create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\GroupRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GroupRequest $request)
     {
-        //
+        Group::create($request->all());
+
+        return back();
     }
 
     /**
@@ -46,19 +51,26 @@ class GroupController extends Controller
      */
     public function edit(Group $group)
     {
-        //
+        return view('group_edit', [
+            'group' => $group,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\GroupRequest  $request
      * @param  \App\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Group $group)
+    public function update(GroupRequest $request, Group $group)
     {
-        //
+        $group->update([
+            'name' => $request->name,
+            'description' => $request->description,
+        ]);
+
+        return back();
     }
 
     /**
@@ -69,6 +81,6 @@ class GroupController extends Controller
      */
     public function destroy(Group $group)
     {
-        //
+        $group->delete();
     }
 }
