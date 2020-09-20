@@ -50,7 +50,7 @@ class TaskController extends Controller
         $task->group_id = $group->id;
         $task->save();
 
-        return back();
+        return redirect()->route('groups.tasks.index', [$group->id]);
     }
 
     /**
@@ -79,7 +79,7 @@ class TaskController extends Controller
             'name' => $request->name,
         ]);
 
-        return back();
+        return redirect()->route('groups.tasks.index', [$task->group->id]);
     }
 
     /**
@@ -91,5 +91,7 @@ class TaskController extends Controller
     public function destroy(Task $task)
     {
         $task->delete();
+
+        return redirect()->route('groups.tasks.index', [$task->group->id]);
     }
 }
