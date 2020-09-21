@@ -1,7 +1,15 @@
 {
-	"group": "Group",
-	"groups": "Groups",
-	"name": "Name",
-	"task": "Task",
-	"tasks": "Tasks"
+    "confirm": "Are you sure?",
+    "delete": "Delete",
+    "description": "Description",
+    "edit": "Edit",
+    "english": "English (en)",
+    "group": "Group",
+    "groups": "Groups",
+    "language": "Language",
+    "name": "Name",
+    "submit": "Submit",
+    "task": "Task",
+    "tasks": "Tasks",
+    "vietnamese": "Tiếng Việt (vi)"
 }

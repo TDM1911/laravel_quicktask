@@ -40,7 +40,7 @@ class GroupController extends Controller
     {
         Group::create($request->all());
 
-        return back();
+        return redirect()->route('home');
     }
 
     /**
@@ -70,7 +70,7 @@ class GroupController extends Controller
             'description' => $request->description,
         ]);
 
-        return back();
+        return redirect()->route('home');
     }
 
     /**
@@ -82,5 +82,7 @@ class GroupController extends Controller
     public function destroy(Group $group)
     {
         $group->delete();
+
+        return redirect()->route('home');
     }
 }
