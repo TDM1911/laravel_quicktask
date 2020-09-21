@@ -24,4 +24,4 @@ Route::resource('groups.tasks', TaskController::class)
     ->except([
         'show',
     ]);
-Route::get('locale/{locale}', "LocalizationController@localize");
+Route::get('locale/{locale}', "LocalizationController@localize")->name('locale');

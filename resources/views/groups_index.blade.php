@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="container mt-4">
+        <a class="btn btn-primary mb-2" href="{{ route('groups.create') }}">
+            {{ trans('group.create') }}
+        </a>
         <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>

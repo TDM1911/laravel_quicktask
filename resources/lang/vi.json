@@ -1,7 +1,15 @@
 {
-  "group": "Nhóm",
-  "groups": "Nhóm",
-  "name": "Name",
-  "task": "Công việc",
-  "tasks": "Công việc"
+    "confirm": "Bạn chắc chứ?",
+    "delete": "Xoá",
+    "description": "Mô tả",
+    "edit": "Sửa",
+    "english": "English (en)",
+    "group": "Nhóm",
+    "groups": "Nhóm",
+    "language": "Ngôn ngữ",
+    "name": "Tên",
+    "submit": "Xác nhận",
+    "task": "Công việc",
+    "tasks": "Công việc",
+    "vietnamese": "Tiếng Việt (vi)"
 }

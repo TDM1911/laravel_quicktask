@@ -13,7 +13,7 @@ class GroupRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,7 +25,7 @@ class GroupRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'description' => 'string',
+            '?description' => 'string',
         ];
     }
 }
